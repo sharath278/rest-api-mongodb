@@ -1,0 +1,24 @@
+{
+  "name": "rest-api-mongodb",
+  "version": "1.0.0",
+  "description": "This project is a RESTful API built using Express.js and MongoDB. It allows you to perform CRUD operations on a User model with fields like name, email, and age. This API demonstrates basic backend development concepts including routing, database connection, and GitHub branching workflow.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sharath278/rest-api-mongodb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sharath278/rest-api-mongodb/issues"
+  },
+  "homepage": "https://github.com/sharath278/rest-api-mongodb#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^8.17.1"
+  }
+}

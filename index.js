@@ -37,9 +37,9 @@ const userSchema = new mongoose.Schema({
 });
 const feed = mongoose.model("post", userSchema);
 
-app.get("/",(req,res)=>{
-    res.send("server is working...");
-})
+// app.get("/",(req,res)=>{
+//     res.send("server is working...");
+// })
 
 app.listen(port,()=>{
     console.log("app is listening...");
