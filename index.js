@@ -55,16 +55,13 @@ app.post('/postnew', async (req, res) => {
   const { username, content } = req.body;
 
   try {
-    
     const result = await feed.insertOne({ User: username, msg: content });
-    
     res.redirect("/");
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: 'Error creating post' });
   }
 });
-
 
 
 
