@@ -76,6 +76,11 @@ app.post("/update/:id",async(req,res)=>{
    res.redirect("/");
 })
 
+app.get("/view/:id",async (req,res)=>{
+  let {id} = req.params;
+  let  viewcontent= await feed.findById(id);
+  res.render("view.ejs",{viewcontent});
+})
 
 
 app.listen(port, () => {
