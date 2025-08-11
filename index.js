@@ -4,6 +4,8 @@ const app = express();
 const path = require("path");
 
 let port = 8080;
+const methodOverride = require("method-override");
+app.use(methodOverride("_method"));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -81,6 +83,14 @@ app.get("/view/:id",async (req,res)=>{
   let  viewcontent= await feed.findById(id);
   res.render("view.ejs",{viewcontent});
 })
+
+app.delete("/delete/:id",async (req,res)=>{
+  let {id}= req.params;
+   await feed.findByIdAndDelete(id);
+  res.redirect("/");
+  
+})
+
 
 
 app.listen(port, () => {
