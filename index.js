@@ -55,9 +55,7 @@ app.post('/postnew', async (req, res) => {
   const { username, content } = req.body;
 
   try {
-    
     const result = await feed.insertOne({ User: username, msg: content });
-    
     res.redirect("/");
   } catch (error) {
     console.error(error);
@@ -65,13 +63,18 @@ app.post('/postnew', async (req, res) => {
   }
 });
 
+app.get("/editform/:id",async(req,res)=>{
+  let {id} = req.params;
+  let  contentt= await feed.findById(id);
+  res.render("edit.ejs",{contentt});
+})
 
-
-
-
-
-
-
+app.post("/update/:id",async(req,res)=>{
+  let{id} = req.params;
+  let {newcontent } = req.body;
+   await feed.findByIdAndUpdate(id, { msg:newcontent}); 
+   res.redirect("/");
+})
 
 
 
