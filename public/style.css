@@ -5,10 +5,10 @@ h1{
 
 .box {
     background-color: burlywood;
-    width: 40%;           /* 40% of parent/container width */
+    width: 40%;           
     padding: 15px;
     border-radius: 5px;
-    margin: 10px 0;       /* vertical spacing only */
+    margin: 10px 0;       
     box-sizing: border-box;
     word-wrap: break-word;
 }
