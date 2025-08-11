@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Quora posts</h1>
+    <% for(let post of posts){ %>
+    <div class="box">
+        <h2>username : <%= post.User %></h2>
+        <h2>content : <%= post.msg %></h2>
+    </div>
+    <br>
+    <br>
+    <% } %>
+</body>
+</html>

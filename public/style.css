@@ -1,0 +1,16 @@
+h1{
+    color: blueviolet;
+}
+
+
+.box {
+    background-color: burlywood;
+    width: 40%;           /* 40% of parent/container width */
+    padding: 15px;
+    border-radius: 5px;
+    margin: 10px 0;       /* vertical spacing only */
+    box-sizing: border-box;
+    word-wrap: break-word;
+}
+
+
