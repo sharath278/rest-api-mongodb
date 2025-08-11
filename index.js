@@ -47,6 +47,37 @@ app.get("/", async (req, res) => {
   }
 });
 
+app.get("/addnew",(req , res)=>{
+  res.render("new.ejs");
+})
+
+app.post('/postnew', async (req, res) => {
+  const { username, content } = req.body;
+
+  try {
+    
+    const result = await feed.insertOne({ User: username, msg: content });
+    
+    res.redirect("/");
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Error creating post' });
+  }
+});
+
+
+
+
+
+
+
+
+
+
+
+app.listen(port, () => {
+  console.log(`App is listening on port ${port}...`);
+});
 
 /*
 feed.insertMany([
@@ -56,7 +87,3 @@ feed.insertMany([
 .then(result => console.log('Inserted:', result))
 .catch(err => console.error('Error:', err));
 */
-
-app.listen(port, () => {
-  console.log(`App is listening on port ${port}...`);
-});
