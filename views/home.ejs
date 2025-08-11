@@ -14,6 +14,9 @@
         <h2>username : <%= post.User %></h2>
         <h2>content : <%= post.msg %></h2>
     
+       <form action="/editform/<%=post._id%>" method="GET">
+          <button>edit</button>
+       </form>
     </div>
     <br>
     <br>
